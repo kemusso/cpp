@@ -30,7 +30,6 @@ static bool	isAllDigits(const std::string &s)
 	return true;
 }
 
-// Asks until a valid value is entered. Returns false on EOF.
 static bool	readField(const std::string &prompt, std::string &out, bool digitsOnly)
 {
 	while (true)
@@ -53,7 +52,6 @@ PhoneBook::PhoneBook() : _count(0), _next(0)
 {
 }
 
-// Returns false when the input reached EOF.
 bool	PhoneBook::add()
 {
 	std::string	firstName;
@@ -83,7 +81,6 @@ bool	PhoneBook::add()
 	return true;
 }
 
-// Returns false when the input reached EOF.
 bool	PhoneBook::search() const
 {
 	if (_count == 0)
