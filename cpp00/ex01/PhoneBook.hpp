@@ -15,8 +15,8 @@ private:
 public:
 	PhoneBook();
 
-	void	add();
-	void	search() const;
+	bool	add();
+	bool	search() const;
 };
 
 #endif

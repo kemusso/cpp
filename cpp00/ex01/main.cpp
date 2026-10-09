@@ -13,9 +13,15 @@ int	main(void)
 		if (!std::getline(std::cin, command))
 			break ;
 		if (command == "ADD")
-			phoneBook.add();
+		{
+			if (!phoneBook.add())
+				break ;
+		}
 		else if (command == "SEARCH")
-			phoneBook.search();
+		{
+			if (!phoneBook.search())
+				break ;
+		}
 		else if (command == "EXIT")
 			break ;
 	}
