@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
-		std::cerr << "Usage: " << argv[0] << " <filename> <s1> <s2>" << std::endl;
+		std::cout << "Usage: " << argv[0] << " <filename> <s1> <s2>" << std::endl;
 		return 1;
 	}
 	const std::string	filename = argv[1];
@@ -32,13 +32,13 @@ int	main(int argc, char **argv)
 
 	if (s1.empty())
 	{
-		std::cerr << "Error: s1 must not be empty" << std::endl;
+		std::cout << "Error: s1 must not be empty" << std::endl;
 		return 1;
 	}
 	std::ifstream	in(filename.c_str());
 	if (!in.is_open())
 	{
-		std::cerr << "Error: cannot open " << filename << std::endl;
+		std::cout << "Error: cannot open " << filename << std::endl;
 		return 1;
 	}
 	std::string	content;
@@ -51,7 +51,7 @@ int	main(int argc, char **argv)
 	}
 	if (in.bad())
 	{
-		std::cerr << "Error: failed to read " << filename << std::endl;
+		std::cout << "Error: failed to read " << filename << std::endl;
 		return 1;
 	}
 	in.close();
@@ -59,7 +59,7 @@ int	main(int argc, char **argv)
 	std::ofstream	out((filename + ".replace").c_str());
 	if (!out.is_open())
 	{
-		std::cerr << "Error: cannot create " << filename << ".replace" << std::endl;
+		std::cout << "Error: cannot create " << filename << ".replace" << std::endl;
 		return 1;
 	}
 	out << replaceAll(content, s1, s2);
