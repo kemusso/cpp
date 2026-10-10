@@ -42,9 +42,13 @@ int	main(int argc, char **argv)
 		return 1;
 	}
 	std::string	content;
-	char		c;
-	while (in.get(c))
-		content += c;
+	std::string	line;
+	while (std::getline(in, line))
+	{
+		content += line;
+		if (!in.eof())
+			content += '\n';
+	}
 	if (in.bad())
 	{
 		std::cerr << "Error: failed to read " << filename << std::endl;
